@@ -103,53 +103,87 @@ function LandingPage({ onNavigate }) {
   return (
     <>
       <section className="hero">
-        <div className="hero-overlay" />
         <div className="hero-content">
-          <p className="eyebrow">Pakistan based apparel sourcing office</p>
-          <h1>Asia Global Textiles</h1>
-          <p className="hero-copy">
-            A dependable liaison partner for international importers sourcing specialized apparel
-            products from Pakistan.
-          </p>
-          <div className="hero-actions">
-            <button className="primary-button" onClick={() => onNavigate("contact")}>
-              Start an inquiry <ArrowRight size={18} />
-            </button>
-            <a className="secondary-button" href="mailto:info@asiaglobaltex.com">
-              <Mail size={18} /> info@asiaglobaltex.com
-            </a>
+          <div className="hero-copy-block">
+            <p className="eyebrow">Pakistan based apparel sourcing office</p>
+            <h1>Reliable apparel sourcing from Pakistan.</h1>
+            <p className="hero-copy">
+              Asia Global Textiles connects international importers with capable Pakistani vendors
+              and keeps every order moving with clear communication, quality supervision, and
+              shipment discipline.
+            </p>
+            <div className="hero-actions">
+              <button className="primary-button" onClick={() => onNavigate("contact")}>
+                Start an inquiry <ArrowRight size={18} />
+              </button>
+              <a className="secondary-button" href="mailto:info@asiaglobaltex.com">
+                <Mail size={18} /> info@asiaglobaltex.com
+              </a>
+            </div>
           </div>
+
+          <aside className="hero-panel" aria-label="Asia Global Textiles order supervision">
+            <img src={logoSrc} alt="Asia Global Textiles" />
+            <div className="panel-divider" />
+            <p>From first inquiry to final shipment, one liaison office keeps the order visible.</p>
+            <div className="metric-row">
+              <div>
+                <strong>4</strong>
+                <span>Order stages supervised</span>
+              </div>
+              <div>
+                <strong>1</strong>
+                <span>Local point of accountability</span>
+              </div>
+            </div>
+          </aside>
         </div>
+      </section>
+
+      <section className="intro-band">
+        <div>
+          <p className="section-kicker">Why importers work with us</p>
+          <h2>Local vendor access, international buyer discipline.</h2>
+        </div>
+        <p>
+          We act as the practical bridge between buyer expectations and factory execution, helping
+          reduce sourcing risk while keeping development, production, and shipping conversations
+          organized.
+        </p>
       </section>
 
       <section className="trust-strip" aria-label="Trust indicators">
-        <TrustItem icon={<Globe2 />} title="Importer support" text="Clear communication across time zones." />
-        <TrustItem icon={<Factory />} title="Vendor network" text="Expert production partners in Pakistan." />
-        <TrustItem icon={<ShieldCheck />} title="Quality assurance" text="Order supervision from development to shipment." />
-        <TrustItem icon={<Timer />} title="Timely shipments" text="Production follow-up with schedule discipline." />
+        <TrustItem icon={<Globe2 />} title="Importer support" text="Clear communication for overseas buying teams." />
+        <TrustItem icon={<Factory />} title="Vendor network" text="Experienced production partners for Pakistan apparel." />
+        <TrustItem icon={<ShieldCheck />} title="Quality assurance" text="Checks and follow-up before problems travel." />
+        <TrustItem icon={<Timer />} title="Timely shipments" text="Schedule tracking from approval to dispatch." />
       </section>
 
       <section className="split-section">
-        <div>
+        <div className="section-heading">
           <p className="section-kicker">What we manage</p>
-          <h2>One accountable office across the full order journey.</h2>
+          <h2>Every stage has someone watching it closely.</h2>
+          <p>
+            Sourcing is easier to trust when development, production, and shipment details are
+            visible at the right time.
+          </p>
         </div>
         <div className="process-grid">
-          <ProcessStep icon={<ClipboardCheck />} title="Inquiry" text="We review requirements, technical needs, quantities, and target timelines before recommending the right route." />
+          <ProcessStep icon={<ClipboardCheck />} title="Inquiry" text="Requirements, technical details, quantities, and timelines are reviewed before vendor direction." />
           <ProcessStep icon={<Shirt />} title="Development" text="Sampling, fabric direction, trims, measurements, and approvals are followed with practical production awareness." />
-          <ProcessStep icon={<PackageCheck />} title="Production" text="We coordinate vendors, monitor progress, and keep importers informed with prompt, useful updates." />
-          <ProcessStep icon={<Truck />} title="Shipment" text="Final checks, packing readiness, documentation coordination, and shipment follow-up stay under active supervision." />
+          <ProcessStep icon={<PackageCheck />} title="Production" text="Vendor coordination, progress checks, and buyer updates keep the order under active control." />
+          <ProcessStep icon={<Truck />} title="Shipment" text="Final checks, packing readiness, documentation coordination, and dispatch follow-up stay organized." />
         </div>
       </section>
 
       <section className="capability-band">
         <div className="band-copy">
           <p className="section-kicker">Built for confidence</p>
-          <h2>Specialized apparel sourcing with hands-on local oversight.</h2>
+          <h2>Hands-on supervision for specialized apparel orders.</h2>
           <p>
             Asia Global Textiles helps importers source goods out of Pakistan through experienced
             vendors and practical order management. The office is positioned to reduce uncertainty:
-            faster answers, visible production status, and quality control before problems travel.
+            faster answers, visible production status, and quality control before shipment.
           </p>
         </div>
         <div className="assurance-list">
