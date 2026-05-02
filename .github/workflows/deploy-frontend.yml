@@ -58,5 +58,7 @@ jobs:
             sudo rm -rf '$DEPLOY_PATH'/* &&
             sudo cp -r '$RELEASE_DIR'/* '$DEPLOY_PATH' &&
             sudo chown -R www-data:www-data '$DEPLOY_PATH' &&
+            sudo find '$DEPLOY_PATH' -type d -exec chmod 755 {} \; &&
+            sudo find '$DEPLOY_PATH' -type f -exec chmod 644 {} \; &&
             rm -rf '$RELEASE_DIR'
           "
