@@ -178,9 +178,20 @@ a {
   overflow: hidden;
   color: #fff;
   background:
-    linear-gradient(100deg, rgba(17, 34, 68, 0.92), rgba(39, 76, 128, 0.72), rgba(160, 32, 44, 0.22)),
-    url("https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1800&q=80")
-      center / cover;
+    radial-gradient(circle at 82% 28%, rgba(255, 255, 255, 0.2), transparent 28%),
+    linear-gradient(100deg, rgba(14, 28, 56, 0.92), rgba(35, 70, 118, 0.72) 52%, rgba(160, 32, 44, 0.32)),
+    url("/cover/IMG_3639-cover.jpg") center 43% / cover;
+  background-blend-mode: soft-light, normal, normal;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(12, 24, 48, 0.26), transparent 48%),
+    rgba(255, 255, 255, 0.04);
+  backdrop-filter: saturate(0.92);
 }
 
 .hero::after {
