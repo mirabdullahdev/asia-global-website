@@ -180,8 +180,9 @@ a {
   background:
     radial-gradient(circle at 82% 28%, rgba(255, 255, 255, 0.2), transparent 28%),
     linear-gradient(100deg, rgba(14, 28, 56, 0.92), rgba(35, 70, 118, 0.72) 52%, rgba(160, 32, 44, 0.32)),
-    url("/cover/IMG_3639-cover.jpg") center 43% / cover;
-  background-blend-mode: soft-light, normal, normal;
+    url("/cover/IMG_3639-cover.jpg") 68% 46% / auto 112% no-repeat,
+    url("/cover/IMG_3639-cover.jpg") center 46% / cover no-repeat;
+  background-blend-mode: soft-light, normal, normal, luminosity;
 }
 
 .hero::before {
@@ -190,8 +191,8 @@ a {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(12, 24, 48, 0.26), transparent 48%),
-    rgba(255, 255, 255, 0.04);
-  backdrop-filter: saturate(0.92);
+    rgba(255, 255, 255, 0.03);
+  backdrop-filter: saturate(0.9) blur(0.5px);
 }
 
 .hero::after {
@@ -765,7 +766,8 @@ a {
 
   .hero {
     min-height: 70vh;
-    background-position: 56% center;
+    background-position: 82% 28%, center, 58% 46%, center 46%;
+    background-size: auto, auto, auto 108%, cover;
   }
 
   .trust-strip,
