@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "languageName": "Español"
+  },
+  "nav": {
+    "home": "Inicio",
+    "capabilities": "Qué hacemos",
+    "products": "Productos",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "cta": "Sea nuestro socio"
+  },
+  "hero": {
+    "title": "Abastecimiento confiable de prendas desde Pakistán.",
+    "subtitle": "Asia Global Textiles conecta a importadores internacionales con proveedores paquistaníes capaces y mantiene cada pedido en marcha con comunicación clara, supervisión de calidad y disciplina en los envíos.",
+    "ctaPrimary": "Descubra nuestras capacidades",
+    "ctaSecondary": "Agendar una reunión",
+    "scroll": "Desplácese para explorar"
+  },
+  "intro": {
+    "title": "Un socio de abastecimiento, no simplemente otro proveedor",
+    "body": "Conectamos a importadores y marcas de moda con las fábricas de confección y denim adecuadas en Pakistán, y gestionamos los detalles, del muestreo al envío, para que cada pedido llegue confiable, a tiempo y a un precio justo.",
+    "pillars": [
+      {
+        "title": "Acceso directo a fábricas",
+        "desc": "Una red confiable de fabricantes de confección y denim en todo Pakistán."
+      },
+      {
+        "title": "Un socio responsable",
+        "desc": "Un único punto de contacto desde la primera consulta hasta la entrega final."
+      },
+      {
+        "title": "Puntual y transparente",
+        "desc": "Precios claros y actualizaciones oportunas: siempre sabe en qué estado está su pedido."
+      }
+    ]
+  },
+  "capabilities": {
+    "title": "Qué hacemos",
+    "subtitle": "Todo lo que necesita para pasar del concepto al contenedor, gestionado bajo un mismo techo.",
+    "items": [
+      {
+        "title": "Ventanilla única de abastecimiento",
+        "desc": "Una sola oficina que coordina a los proveedores paquistaníes adecuados: trata con nosotros, no con decenas de fábricas."
+      },
+      {
+        "title": "Acceso a red de proveedores",
+        "desc": "Acceso directo a una red confiable de fabricantes de prendas y denim en todo Pakistán."
+      },
+      {
+        "title": "Coordinación de pedidos",
+        "desc": "Gestionamos plazos, muestras y seguimientos de principio a fin, manteniendo cada pedido en marcha."
+      },
+      {
+        "title": "Supervisión de calidad",
+        "desc": "Supervisión en planta en nuestras fábricas asociadas para que la producción cumpla las especificaciones."
+      },
+      {
+        "title": "Comunicación clara",
+        "desc": "Actualizaciones puntuales y transparentes en cada paso: el diferenciador en el que confían nuestros compradores."
+      },
+      {
+        "title": "Logística y exportación",
+        "desc": "Documentación, consolidación y envío coordinados hasta su destino."
+      }
+    ]
+  },
+  "products": {
+    "title": "Confección y denim que abastecemos",
+    "subtitle": "Un portafolio enfocado para importadores y marcas de moda: de tejidos de punto y planos a programas completos de denim.",
+    "categories": [
+      "Denim",
+      "Tejidos de punto",
+      "Prendas de tejido plano",
+      "Ropa deportiva"
+    ]
+  },
+  "services": {
+    "title": "Servicios",
+    "items": [
+      { "title": "Investigación y desarrollo de producto", "desc": "Desarrollamos y refinamos conceptos hasta obtener piezas listas para producir." },
+      { "title": "Muestreo", "desc": "Coordinamos y aprobamos las muestras antes de iniciar la producción en volumen." },
+      { "title": "Selección de proveedores", "desc": "Asignamos cada pedido a las fábricas adecuadas de nuestra red paquistaní." },
+      { "title": "Asistencia en planificación y control de producción", "desc": "Ayudamos a planificar y monitorear los calendarios de producción para cumplir los plazos." },
+      { "title": "Aseguramiento y monitoreo de calidad", "desc": "Supervisión continua en fábricas asociadas para mantener la producción según especificaciones." },
+      { "title": "Inspección", "desc": "Controles en fábrica para verificar la calidad antes del despacho." },
+      { "title": "Coordinación y comunicación con el cliente", "desc": "Un único punto de contacto que lo mantiene informado en cada paso." },
+      { "title": "Supervisión de envíos y logística", "desc": "Supervisamos documentación, consolidación, exportación y envío hasta su destino." }
+    ]
+  },
+  "cta": {
+    "title": "Construyamos algo duradero",
+    "body": "Cuéntenos qué está abasteciendo y le mostraremos lo confiable que puede ser el abastecimiento textil desde Pakistán.",
+    "button": "Sea nuestro socio"
+  },
+  "footer": {
+    "tagline": "Su ventana única a la confección y el denim de Pakistán.",
+    "explore": "Explorar",
+    "company": "Empresa",
+    "contact": "Contacto",
+    "rights": "Todos los derechos reservados."
+  }
+}

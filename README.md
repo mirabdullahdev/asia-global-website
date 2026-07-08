@@ -1,53 +1,32 @@
-# Asia Global Textiles Website
+# React + TypeScript + Vite
 
-Professional brand website for Asia Global Textiles.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## Structure
+Currently, two official plugins are available:
 
-- `frontend` - Vite + React website.
-- `backend` - Placeholder for future backend work.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Frontend
+## React Compiler
 
-```bash
-cd frontend
-npm install
-npm run dev
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the Oxlint configuration
+
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
 ```
 
-Current pages:
-
-- Landing page
-- Contact page with `info@asiaglobaltex.com`
-- About Us, Services, and Products pages marked as coming soon
-
-## Deployment
-
-The frontend is deployed to an Ubuntu EC2 instance with Nginx.
-
-Current server:
-
-- Public IP: `54.159.150.200`
-- SSH user: `ubuntu`
-- Web root: `/var/www/asia-global-textiles`
-- Nginx config: `deploy/nginx/asia-global-textiles.conf`
-
-GitHub Actions workflow:
-
-- `.github/workflows/deploy-frontend.yml`
-- Runs on pushes to `main`
-- Builds `frontend`
-- Uploads `frontend/dist` to EC2
-- Publishes the files to the Nginx web root
-
-Required GitHub repository secrets:
-
-```txt
-EC2_HOST=54.159.150.200
-EC2_USER=ubuntu
-EC2_PORT=22
-DEPLOY_PATH=/var/www/asia-global-textiles
-EC2_SSH_KEY=<full private key contents from asiaglobal.pem>
-```
-
-Cloudflare and domain/SSL setup should be done after the GitHub secrets are configured and the workflow deploys successfully.
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.

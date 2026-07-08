@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+
+/*
+  Asia Global Textiles — global styles (light theme).
+  Tailwind v4 CSS-first config.
+  Typography: Inter throughout (display + body).
+  Editorial palette — cream grounds, deep-red brand, blue accent (Pantone 286 C).
+*/
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Warm neutral grounds */
+  --color-cream-50: #faf7f2;
+  --color-cream-100: #f4efe6;
+  --color-cream-200: #e9e1d4;
+  --color-ink: #1c1a16;
+
+  /* Brand — deep red */
+  --color-brand-50: #fbf1f0;
+  --color-brand-100: #f6dbd8;
+  --color-brand-200: #ecb8b1;
+  --color-brand-300: #dd8f86;
+  --color-brand-400: #cb5f52;
+  --color-brand-500: #b23b30;
+  --color-brand-600: #9a2d24;
+  --color-brand-700: #7e241d;
+  --color-brand-800: #631c17;
+  --color-brand-900: #4a1511;
+
+  /* Accent — blue (Pantone 286 C = clay-500) */
+  --color-clay-100: #d8e3f6;
+  --color-clay-200: #aec7ee;
+  --color-clay-300: #7c9fe1;
+  --color-clay-400: #4a74e0;
+  --color-clay-500: #0039a6;
+  --color-clay-600: #002b7d;
+  --color-clay-900: #071a3d;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream-50 text-ink antialiased;
+  font-family: var(--font-sans);
+  min-height: 100dvh;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Fraunces serif — used only for the main hero heading. */
+.font-hero {
+  font-family: 'Fraunces', ui-serif, Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+::selection {
+  background: var(--color-brand-800);
+  color: var(--color-cream-50);
+}
+
+/* Respect users who prefer reduced motion — animations degrade gracefully. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

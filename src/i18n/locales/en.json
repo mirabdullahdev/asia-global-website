@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "languageName": "English"
+  },
+  "nav": {
+    "home": "Home",
+    "capabilities": "What We Do",
+    "products": "Products",
+    "services": "Services",
+    "contact": "Contact",
+    "cta": "Partner with us"
+  },
+  "hero": {
+    "title": "Reliable apparel sourcing from Pakistan.",
+    "subtitle": "Asia Global Textiles connects international importers with capable Pakistani vendors and keeps every order moving with clear communication, quality supervision, and shipment discipline.",
+    "ctaPrimary": "Explore our capabilities",
+    "ctaSecondary": "Book a Meeting",
+    "scroll": "Scroll to explore"
+  },
+  "intro": {
+    "title": "A sourcing partner, not just another supplier",
+    "body": "We connect importers and fashion brands with the right apparel and denim factories in Pakistan — and manage the details, from sampling to shipment, so every order arrives dependable, on time, and at a fair price.",
+    "pillars": [
+      {
+        "title": "Direct factory access",
+        "desc": "A trusted network of apparel and denim manufacturers across Pakistan."
+      },
+      {
+        "title": "One accountable partner",
+        "desc": "A single point of contact from first enquiry through final delivery."
+      },
+      {
+        "title": "Timely & transparent",
+        "desc": "Clear pricing and prompt updates, so you always know where your order stands."
+      }
+    ]
+  },
+  "capabilities": {
+    "title": "What We Do",
+    "subtitle": "Everything you need to move from concept to container, handled under one roof.",
+    "items": [
+      {
+        "title": "Single-Window Sourcing",
+        "desc": "One office coordinating the right Pakistani vendors — you deal with us, not a dozen factories."
+      },
+      {
+        "title": "Vendor Network Access",
+        "desc": "Direct access to a trusted network of apparel and denim manufacturers across Pakistan."
+      },
+      {
+        "title": "Order Coordination",
+        "desc": "We manage timelines, samples, and follow-ups end to end, keeping every order moving."
+      },
+      {
+        "title": "Quality Oversight",
+        "desc": "On-the-ground supervision at our partner factories to keep production on spec."
+      },
+      {
+        "title": "Clear Communication",
+        "desc": "Timely, transparent updates at every step — the difference our buyers rely on."
+      },
+      {
+        "title": "Logistics & Export",
+        "desc": "Documentation, consolidation, and shipping coordinated to your destination."
+      }
+    ]
+  },
+  "products": {
+    "title": "Apparel & denim we source",
+    "subtitle": "A focused portfolio for importers and fashion brands — from knits and wovens to full denim programs.",
+    "categories": [
+      "Denim",
+      "Knitwear",
+      "Woven Apparel",
+      "Activewear"
+    ]
+  },
+  "services": {
+    "title": "Services",
+    "items": [
+      { "title": "Product R&D", "desc": "Developing and refining product concepts toward production-ready pieces." },
+      { "title": "Sampling", "desc": "Coordinating and approving samples before bulk production begins." },
+      { "title": "Vendor Selection", "desc": "Matching each order to the right factories in our Pakistani network." },
+      { "title": "Production Planning & Control Assistance", "desc": "Helping plan and monitor production schedules to keep orders on track." },
+      { "title": "Quality Assurance & Monitoring", "desc": "Ongoing oversight at partner factories to keep output on specification." },
+      { "title": "Inspection", "desc": "Checks at the factory to verify quality before dispatch." },
+      { "title": "Client Coordination & Communication", "desc": "A single point of contact keeping you updated at every step." },
+      { "title": "Shipping & Logistics Supervision", "desc": "Overseeing documentation, consolidation, export, and shipping to your destination." }
+    ]
+  },
+  "cta": {
+    "title": "Let's build something lasting",
+    "body": "Tell us what you're sourcing, and we'll show you how dependable textile sourcing from Pakistan can be.",
+    "button": "Partner with us"
+  },
+  "footer": {
+    "tagline": "Our single window to Pakistan's apparel and denim.",
+    "explore": "Explore",
+    "company": "Company",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  }
+}
