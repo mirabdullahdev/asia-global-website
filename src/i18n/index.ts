@@ -24,8 +24,11 @@ void i18n
     detection: {
       // Default first-time visitors to Spanish (ignore browser language);
       // remember a manual toggle via localStorage.
+      // Custom key so stale `i18nextLng` values from the pre-Spanish-default
+      // build are ignored — everyone resets to the Spanish default.
       order: ['localStorage'],
       caches: ['localStorage'],
+      lookupLocalStorage: 'agt-lang',
     },
   })
 
