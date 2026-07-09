@@ -95,7 +95,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, ease: EASE, delay: 0.5 }}
-            className="relative h-[260px] w-full overflow-hidden sm:h-[340px] lg:h-[56vh]"
+            className="relative h-[220px] w-full overflow-hidden sm:h-[290px] lg:h-[46vh]"
             style={{
               WebkitMaskImage:
                 'linear-gradient(to right, transparent, #000 15%, #000 85%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent)',
