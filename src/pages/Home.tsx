@@ -46,7 +46,8 @@ export default function Home() {
         >
           <source src="/videos/agt-cover.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/25" />
 
         <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 py-32 lg:grid-cols-2 lg:gap-16 lg:px-10">
           <motion.div
@@ -91,23 +92,29 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 24 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: EASE, delay: 0.45 }}
-            className="w-full"
+            initial={{ opacity: 0, y: 28 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, ease: EASE, delay: 0.5 }}
+            className="relative h-[360px] w-full overflow-hidden sm:h-[460px] lg:h-[74vh]"
+            style={{
+              WebkitMaskImage:
+                'linear-gradient(to right, transparent, #000 15%, #000 85%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent)',
+              WebkitMaskComposite: 'source-in',
+              maskImage:
+                'linear-gradient(to right, transparent, #000 15%, #000 85%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent)',
+              maskComposite: 'intersect',
+            }}
           >
-            <div className="overflow-hidden rounded-2xl shadow-2xl shadow-black/50">
-              <video
-                className="aspect-video h-full w-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster="/videos/agt-denim-poster.jpg"
-              >
-                <source src="/videos/agt-denim.mp4" type="video/mp4" />
-              </video>
-            </div>
+            <video
+              className="h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster="/videos/agt-showcase-poster.jpg"
+            >
+              <source src="/videos/agt-showcase.mp4" type="video/mp4" />
+            </video>
           </motion.div>
         </div>
 

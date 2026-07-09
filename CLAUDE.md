@@ -123,9 +123,11 @@ controls) → Products (6 category tiles with real photos in `public/categories/
 → Services (8 items) → CTA/Contact → Footer. (Markets section removed per client request.)
 Nav: Home · Capabilities · Products · Services · Contact. **Default language is Spanish** (fallback
 `es`, detector = localStorage only so browser lang doesn't override); toggle order is ES/EN. Hero is
-a two-column layout: left = text + CTAs ("Book a Meeting" secondary), right = borderless rounded
-video box playing `agt-denim.mp4` (denim, from `videob`), over the 30s-looped `agt-cover.mp4`
-background. Nav links scroll to section ids
+a two-column layout: left = text + CTAs ("Book a Meeting" secondary), right = borderless portrait
+`agt-showcase.mp4` (from `videoc`) with feathered `mask-image` edges (no rounded corners, no shadow)
+so it blends into the hero, over the 30s-looped `agt-cover.mp4` background. Hero heading is
+"From Concept to Container." / "Del concepto al contenedor."; overlay is left-weighted dark for
+heading contrast. Nav links scroll to section ids
 (`capabilities`, `products`, `process`, `markets`, `contact`).
 
 - **Typography:** Inter throughout (both display and body). Loaded via Google Fonts in `index.html`.
