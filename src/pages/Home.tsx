@@ -49,12 +49,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/25" />
 
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 py-32 lg:grid-cols-2 lg:gap-16 lg:px-10">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-32 lg:px-10">
           <motion.div
             initial="hidden"
             animate="show"
             variants={{ show: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } } }}
-            className="text-white"
+            className="max-w-3xl text-white"
           >
             <motion.h1
               variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
@@ -89,32 +89,6 @@ export default function Home() {
                 {t('hero.ctaSecondary')}
               </a>
             </motion.div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.1, ease: EASE, delay: 0.5 }}
-            className="relative h-[220px] w-full overflow-hidden sm:h-[290px] lg:h-[46vh]"
-            style={{
-              WebkitMaskImage:
-                'linear-gradient(to right, transparent, #000 15%, #000 85%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent)',
-              WebkitMaskComposite: 'source-in',
-              maskImage:
-                'linear-gradient(to right, transparent, #000 15%, #000 85%, transparent), linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent)',
-              maskComposite: 'intersect',
-            }}
-          >
-            <video
-              className="h-full w-full object-cover"
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster="/videos/agt-showcase-poster.jpg"
-            >
-              <source src="/videos/agt-showcase.mp4" type="video/mp4" />
-            </video>
           </motion.div>
         </div>
 
