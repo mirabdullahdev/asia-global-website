@@ -56,10 +56,12 @@ body {
   font-family: var(--font-display);
 }
 
-/* Fraunces serif — used only for the main hero heading. */
+/* Bold uppercase geometric sans — used only for the main hero heading. */
 .font-hero {
-  font-family: 'Fraunces', ui-serif, Georgia, serif;
-  font-optical-sizing: auto;
+  font-family: 'Montserrat', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 
 ::selection {

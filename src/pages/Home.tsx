@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import {
   ArrowRight,
@@ -9,7 +10,6 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import Reveal from '@/components/Reveal'
-import CapabilityCarousel from '@/components/CapabilityCarousel'
 import { EASE } from '@/lib/motion'
 
 const PILLAR_ICONS: LucideIcon[] = [Factory, Handshake, MessagesSquare]
@@ -18,9 +18,12 @@ const PILLAR_ICONS: LucideIcon[] = [Factory, Handshake, MessagesSquare]
 const CATEGORY_IMAGES = [
   '/categories/denim.jpg',
   '/categories/knitwear.jpg',
-  '/categories/woven.jpg',
-  '/categories/activewear.jpg',
+  '/categories/chinos.jpg',
+  '/categories/outerwear.jpg',
 ]
+
+// Language-agnostic URL slugs, order-matched to `products.categories`.
+const CATEGORY_SLUGS = ['denim', 'knitwear', 'chinos', 'outerwear']
 
 type TitleDesc = { title: string; desc: string }
 
@@ -59,7 +62,7 @@ export default function Home() {
             <motion.h1
               variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: EASE }}
-              className="font-hero text-4xl font-medium leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
+              className="font-hero text-4xl leading-[1.12] sm:text-5xl lg:text-6xl"
             >
               {t('hero.title')}
             </motion.h1>
@@ -70,25 +73,6 @@ export default function Home() {
             >
               {t('hero.subtitle')}
             </motion.p>
-            <motion.div
-              variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
-              transition={{ duration: 0.8, ease: EASE }}
-              className="mt-10 flex flex-wrap items-center gap-4"
-            >
-              <a
-                href="#capabilities"
-                className="group inline-flex items-center gap-2 rounded-full bg-clay-500 px-7 py-3.5 font-medium text-white transition-colors hover:bg-clay-600"
-              >
-                {t('hero.ctaPrimary')}
-                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3.5 font-medium text-white backdrop-blur transition-colors hover:bg-white/10"
-              >
-                {t('hero.ctaSecondary')}
-              </a>
-            </motion.div>
           </motion.div>
         </div>
 
@@ -108,32 +92,28 @@ export default function Home() {
       {/* ── Intro ──────────────────────────────────────────── */}
       <section id="about" className="bg-cream-50 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
-            <div className="lg:col-span-6">
-              <Reveal>
-                <h2 className="font-display text-3xl font-medium leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-[2.75rem]">
-                  {t('intro.title')}
-                </h2>
-              </Reveal>
-            </div>
-            <div className="lg:col-span-6 lg:pt-2">
-              <Reveal delay={0.1}>
-                <p className="text-lg leading-relaxed text-ink/70">{t('intro.body')}</p>
-              </Reveal>
-            </div>
-          </div>
+          <Reveal className="mx-auto max-w-3xl text-center">
+            <h2 className="font-display text-3xl font-medium leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl">
+              {t('intro.title')}
+            </h2>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink/60">
+              {t('intro.body')}
+            </p>
+          </Reveal>
 
-          <div className="mt-16 grid gap-6 border-t border-cream-200 pt-14 sm:grid-cols-3">
+          <div className="mt-16 grid gap-6 sm:grid-cols-3 lg:mt-20">
             {introPillars.map((pillar, i) => {
               const Icon = PILLAR_ICONS[i] ?? Factory
               return (
                 <Reveal key={pillar.title} delay={i * 0.1}>
-                  <div className="group h-full rounded-2xl border border-cream-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-ink/5">
-                    <span className="flex size-12 items-center justify-center rounded-xl bg-clay-500 text-white transition-colors group-hover:bg-clay-600">
-                      <Icon className="size-6" strokeWidth={1.8} />
+                  <div className="group flex h-full flex-col items-center rounded-3xl border border-cream-200 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-clay-200 hover:shadow-xl hover:shadow-ink/[0.06]">
+                    <span className="flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-clay-400 to-clay-600 text-white shadow-lg shadow-clay-500/25">
+                      <Icon className="size-7" strokeWidth={1.7} />
                     </span>
                     <h3 className="mt-6 text-lg font-semibold text-ink">{pillar.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-ink/60">{pillar.desc}</p>
+                    <p className="mx-auto mt-2.5 max-w-xs text-sm leading-relaxed text-ink/55">
+                      {pillar.desc}
+                    </p>
                   </div>
                 </Reveal>
               )
@@ -152,19 +132,40 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/78 to-black/68" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-            <Reveal>
-              <h2 className="font-display text-3xl font-medium leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-                {t('capabilities.title')}
-              </h2>
-              <p className="mt-6 max-w-md text-lg leading-relaxed text-white/75">
-                {t('capabilities.subtitle')}
-              </p>
+          <div className="grid gap-14 lg:grid-cols-5 lg:gap-20">
+            <Reveal className="lg:col-span-2">
+              <div className="lg:sticky lg:top-32">
+                <h2 className="font-display text-3xl font-medium leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+                  {t('capabilities.title')}
+                </h2>
+                <p className="mt-6 max-w-md text-lg leading-relaxed text-white/70">
+                  {t('capabilities.subtitle')}
+                </p>
+                <Link
+                  to="/what-we-do"
+                  className="mt-10 inline-flex items-center rounded-full bg-white px-8 py-3.5 font-medium text-ink shadow-lg shadow-black/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-clay-500 hover:text-white hover:shadow-xl hover:shadow-clay-500/30"
+                >
+                  {t('capabilities.cta')}
+                </Link>
+              </div>
             </Reveal>
 
-            <Reveal delay={0.1}>
-              <CapabilityCarousel items={capabilities} />
-            </Reveal>
+            <div className="lg:col-span-3">
+              {capabilities.map((item, i) => (
+                <Reveal key={item.title} delay={i * 0.06}>
+                  <div className="group cursor-default py-5 sm:py-6">
+                    <h3 className="font-display text-xl font-medium text-white transition-all duration-300 group-hover:-translate-y-1 group-hover:text-clay-400 sm:text-2xl">
+                      {item.title}
+                    </h3>
+                    <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr]">
+                      <p className="max-w-lg overflow-hidden text-sm leading-relaxed text-white/55 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -184,7 +185,10 @@ export default function Home() {
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((cat, i) => (
               <Reveal key={cat} delay={(i % 4) * 0.08}>
-                <div className="group relative flex h-56 items-end overflow-hidden rounded-2xl bg-clay-900">
+                <Link
+                  to={`/products/${CATEGORY_SLUGS[i]}`}
+                  className="group relative flex h-56 items-end overflow-hidden rounded-2xl bg-clay-900"
+                >
                   <img
                     src={CATEGORY_IMAGES[i]}
                     alt={cat}
@@ -196,7 +200,7 @@ export default function Home() {
                     <h3 className="font-display text-2xl font-medium text-white drop-shadow">{cat}</h3>
                     <ArrowRight className="size-5 text-white/80 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>

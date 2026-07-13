@@ -104,8 +104,12 @@ fine). Produces a static build that deploys to the existing S3 + CloudFront infr
   Light theme; brand color tokens (`brand-*`) are placeholders pending design direction.
 - **Animation:** Framer Motion (`framer-motion`) + Lenis smooth scroll (`SmoothScroll` wrapper,
   auto-disabled under `prefers-reduced-motion`).
-- **Routing:** React Router 7 (`BrowserRouter`). SPA — pairs with the existing CloudFront
-  `asiaglobaltex-spa-rewrite` function.
+- **Routing:** React Router 7 (`BrowserRouter`). **Multi-page** — pages in nav order: `/` (Home,
+  the full landing), `/about`, `/what-we-do`, `/products`, `/contact`. Only Home is built; the other
+  four render `ComingSoon` placeholders. Nav/footer/CTA use `<Link>` (route nav, not scroll-to-
+  section); `ScrollToTop` in `App.tsx` resets scroll on route change; navbar is transparent only on
+  `/` and solid on every other page; unknown paths redirect to `/`. Deep links rely on the existing
+  CloudFront `asiaglobaltex-spa-rewrite` function.
 - **i18n:** `react-i18next` + `i18next-browser-languagedetector`. Locales in
   `src/i18n/locales/{en,es}.json`; both languages first-class. EN/ES toggle via `LanguageSwitcher`.
 - **Icons:** `lucide-react`.
@@ -117,18 +121,17 @@ language switcher + footer) and an animated Home hero — placeholder content to
 ## 6. Landing Page (built)
 
 Single-page landing built with anchor sections + smooth scroll (Lenis). Sections in order:
-Hero → Intro/"who we are" → Capabilities (full-bleed dark section over `backgrounds/end-to-end.jpg`;
-left = heading + tagline, right = `CapabilityCarousel` auto-rotating through the 6 capabilities, no
-controls) → Products (6 category tiles with real photos in `public/categories/`) → Process (6 steps)
+Hero → Intro/"who we are" → What We Do (full-bleed dark section over `backgrounds/end-to-end.jpg`;
+left = sticky heading + tagline + pill CTA button linking to `/what-we-do`, right = static
+hairline-divided list of the 6 capabilities — the auto-rotating `CapabilityCarousel` was removed
+per client) → Products (6 category tiles with real photos in `public/categories/`) → Process (6 steps)
 → Services (8 items) → CTA/Contact → Footer. (Markets section removed per client request.)
 Nav: Home · Capabilities · Products · Services · Contact. **Default language is Spanish** (fallback
 `es`, detector = localStorage only so browser lang doesn't override); toggle order is ES/EN. Hero is
-a two-column layout: left = text + CTAs ("Book a Meeting" secondary), right = borderless portrait
-`agt-showcase.mp4` (from `videoc`) with feathered `mask-image` edges (no rounded corners, no shadow)
-so it blends into the hero, over the 30s-looped `agt-cover.mp4` background. Hero heading is
+single-column (the second showcase video was removed): text + CTAs ("Book a Meeting" secondary)
+over the looping `agt-cover.mp4` background. Hero heading is
 "From Concept to Container." / "Del concepto al contenedor."; overlay is left-weighted dark for
-heading contrast. Nav links scroll to section ids
-(`capabilities`, `products`, `process`, `markets`, `contact`).
+heading contrast.
 
 - **Typography:** Inter throughout (both display and body). Loaded via Google Fonts in `index.html`.
   `--font-display` maps to Inter; the section "eyebrow" labels were removed per client request.
@@ -142,9 +145,14 @@ heading contrast. Nav links scroll to section ids
   `src/lib/motion.ts`. All respect `prefers-reduced-motion`.
 - **Navbar:** fixed, transparent over the hero, switches to solid cream + blur on scroll; EN/ES
   switcher + clay CTA; full-screen animated mobile menu.
-- **Hero cover video:** `public/videos/agt-cover.mp4` (720p, 60s, ~13 MB, muted, `+faststart`) with
-  `agt-cover-poster.jpg` poster. Autoplay + loop + `playsInline`, dark brand gradient overlay.
-  Source: `~/Downloads/agt-mainvideo.mp4` (96 MB, trimmed 2m13s → 1m and compressed).
+- **Hero cover video:** `public/videos/agt-cover.mp4` (720p/30fps, 32s, ~6.8 MB, muted,
+  `+faststart`) with `agt-cover-poster.jpg` poster. Autoplay + loop + `playsInline`, dark overlay.
+  It's a montage cut from `~/Downloads/VIDEO - AGT/` in this order: starting(0:02–0:08) →
+  processing(0:04–0:07) → starting(0:30–0:34) → ironing(0:04–0:07) → starting(0:54–0:58) →
+  stitching(0:00–0:03) → threading-logo(0:00–0:02 + 0:06–0:09) → finished-denim(0:00–0:04) →
+  container(0:00–0:04, portrait source center-cropped to 16:9 at y=600 — truck departing, closes
+  the "concept to container" tagline). Hard cuts (no transitions), per-clip gamma correction for
+  consistent brightness; `weaving.mp4` intentionally unused (per client). Total 36s, ~7.4 MB.
 - **Content:** all copy is bilingual in `src/i18n/locales/{en,es}.json`. **No city names** anywhere
   (per §1b) — only countries (Pakistan, Chile, Brazil, Argentina). Copy is placeholder-quality
   marketing prose; no fabricated stats/certifications.

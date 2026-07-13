@@ -4,17 +4,20 @@
   },
   "nav": {
     "home": "Home",
-    "capabilities": "What We Do",
+    "about": "About Us",
+    "whatWeDo": "What We Do",
     "products": "Products",
-    "services": "Services",
     "contact": "Contact",
     "cta": "Partner with us"
   },
+  "comingSoon": {
+    "title": "Coming Soon",
+    "body": "This page is on its way — we're putting it together. Please check back soon.",
+    "back": "Back to home"
+  },
   "hero": {
-    "title": "From Concept to Container.",
+    "title": "From Concept to Container",
     "subtitle": "Asia Global Textiles connects international importers with capable Pakistani vendors and keeps every order moving with clear communication, quality supervision, and shipment discipline.",
-    "ctaPrimary": "Explore our capabilities",
-    "ctaSecondary": "Book a Meeting",
     "scroll": "Scroll to explore"
   },
   "intro": {
@@ -38,6 +41,7 @@
   "capabilities": {
     "title": "What We Do",
     "subtitle": "Everything you need to move from concept to container, handled under one roof.",
+    "cta": "Explore what we do",
     "items": [
       {
         "title": "Single-Window Sourcing",
@@ -71,8 +75,8 @@
     "categories": [
       "Denim",
       "Knitwear",
-      "Woven Apparel",
-      "Activewear"
+      "Chinos",
+      "Outerwear"
     ]
   },
   "services": {

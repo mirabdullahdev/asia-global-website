@@ -1,23 +1,25 @@
 import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { useLenis } from 'lenis/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import LanguageSwitcher from './LanguageSwitcher'
 
 const LINKS = [
-  { id: 'top', key: 'nav.home' },
-  { id: 'capabilities', key: 'nav.capabilities' },
-  { id: 'products', key: 'nav.products' },
-  { id: 'services', key: 'nav.services' },
-  { id: 'contact', key: 'nav.contact' },
+  { to: '/', key: 'nav.home' },
+  { to: '/about', key: 'nav.about' },
+  { to: '/what-we-do', key: 'nav.whatWeDo' },
+  { to: '/products', key: 'nav.products' },
+  { to: '/contact', key: 'nav.contact' },
 ] as const
 
 export default function Navbar() {
   const { t } = useTranslation()
-  const lenis = useLenis()
+  const { pathname } = useLocation()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+
+  const isHome = pathname === '/'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -34,15 +36,11 @@ export default function Navbar() {
     }
   }, [open])
 
-  const goTo = (id: string) => {
-    setOpen(false)
-    const el = document.getElementById(id)
-    if (!el) return
-    if (lenis) lenis.scrollTo(el, { offset: -72 })
-    else el.scrollIntoView({ behavior: 'smooth' })
-  }
+  // Close the mobile menu whenever the route changes.
+  useEffect(() => setOpen(false), [pathname])
 
-  const solid = scrolled
+  // Transparent over the hero only on the landing page; solid everywhere else.
+  const solid = scrolled || !isHome
   const textColor = solid ? 'text-ink' : 'text-white'
 
   return (
@@ -55,41 +53,41 @@ export default function Navbar() {
         } ${textColor}`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-          <button
-            type="button"
-            onClick={() => goTo('top')}
-            aria-label="Asia Global Textiles — home"
-            className="flex items-center"
-          >
+          <Link to="/" aria-label="Asia Global Textiles — home" className="flex items-center">
             <img
               src={solid ? '/brand/asia-logo.png' : '/brand/asia-logo-light.png'}
               alt="Asia Global Textiles"
               className="h-11 w-auto sm:h-12"
             />
-          </button>
+          </Link>
 
           <nav className="hidden items-center gap-8 text-sm font-medium lg:flex">
-            {LINKS.map((l) => (
-              <button
-                key={l.id}
-                type="button"
-                onClick={() => goTo(l.id)}
-                className="relative py-1 opacity-85 transition-opacity hover:opacity-100 after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 hover:after:scale-x-100"
-              >
-                {t(l.key)}
-              </button>
-            ))}
+            {LINKS.map((l) => {
+              const active = pathname === l.to
+              return (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  className={`relative py-1 transition-opacity after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:bg-current after:transition-transform after:duration-300 ${
+                    active
+                      ? 'opacity-100 after:scale-x-100'
+                      : 'opacity-85 after:scale-x-0 hover:opacity-100 hover:after:scale-x-100'
+                  }`}
+                >
+                  {t(l.key)}
+                </Link>
+              )
+            })}
           </nav>
 
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
-            <button
-              type="button"
-              onClick={() => goTo('contact')}
+            <Link
+              to="/contact"
               className="hidden rounded-full bg-clay-500 px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-clay-600 sm:inline-flex"
             >
               {t('nav.cta')}
-            </button>
+            </Link>
             <button
               type="button"
               aria-label="Menu"
@@ -114,26 +112,29 @@ export default function Navbar() {
           >
             <nav className="flex flex-col gap-2">
               {LINKS.map((l, i) => (
-                <motion.button
-                  key={l.id}
-                  type="button"
-                  onClick={() => goTo(l.id)}
+                <motion.div
+                  key={l.to}
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 * i + 0.1 }}
-                  className="border-b border-white/10 py-4 text-left font-display text-2xl"
                 >
-                  {t(l.key)}
-                </motion.button>
+                  <Link
+                    to={l.to}
+                    onClick={() => setOpen(false)}
+                    className="block border-b border-white/10 py-4 text-left font-display text-2xl"
+                  >
+                    {t(l.key)}
+                  </Link>
+                </motion.div>
               ))}
             </nav>
-            <button
-              type="button"
-              onClick={() => goTo('contact')}
+            <Link
+              to="/contact"
+              onClick={() => setOpen(false)}
               className="mt-8 rounded-full bg-clay-500 px-6 py-3 text-center font-medium text-white"
             >
               {t('nav.cta')}
-            </button>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

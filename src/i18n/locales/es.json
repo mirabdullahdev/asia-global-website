@@ -4,17 +4,20 @@
   },
   "nav": {
     "home": "Inicio",
-    "capabilities": "Qué hacemos",
+    "about": "Nosotros",
+    "whatWeDo": "Qué hacemos",
     "products": "Productos",
-    "services": "Servicios",
     "contact": "Contacto",
     "cta": "Sea nuestro socio"
   },
+  "comingSoon": {
+    "title": "Próximamente",
+    "body": "Esta página está en camino, la estamos preparando. Vuelva pronto.",
+    "back": "Volver al inicio"
+  },
   "hero": {
-    "title": "Del concepto al contenedor.",
+    "title": "Del concepto al contenedor",
     "subtitle": "Asia Global Textiles conecta a importadores internacionales con proveedores paquistaníes capaces y mantiene cada pedido en marcha con comunicación clara, supervisión de calidad y disciplina en los envíos.",
-    "ctaPrimary": "Descubra nuestras capacidades",
-    "ctaSecondary": "Agendar una reunión",
     "scroll": "Desplácese para explorar"
   },
   "intro": {
@@ -38,6 +41,7 @@
   "capabilities": {
     "title": "Qué hacemos",
     "subtitle": "Todo lo que necesita para pasar del concepto al contenedor, gestionado bajo un mismo techo.",
+    "cta": "Descubra qué hacemos",
     "items": [
       {
         "title": "Ventanilla única de abastecimiento",
@@ -71,8 +75,8 @@
     "categories": [
       "Denim",
       "Tejidos de punto",
-      "Prendas de tejido plano",
-      "Ropa deportiva"
+      "Chinos",
+      "Ropa exterior"
     ]
   },
   "services": {

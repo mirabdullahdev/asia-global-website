@@ -1,25 +1,18 @@
 import { useTranslation } from 'react-i18next'
-import { useLenis } from 'lenis/react'
+import { Link } from 'react-router-dom'
 import { Mail } from 'lucide-react'
 
 const EXPLORE = [
-  { id: 'capabilities', key: 'nav.capabilities' },
-  { id: 'products', key: 'nav.products' },
-  { id: 'services', key: 'nav.services' },
+  { to: '/about', key: 'nav.about' },
+  { to: '/what-we-do', key: 'nav.whatWeDo' },
+  { to: '/products', key: 'nav.products' },
+  { to: '/contact', key: 'nav.contact' },
 ] as const
 
 const EMAIL = 'info@asiaglobaltex.com'
 
 export default function Footer() {
   const { t } = useTranslation()
-  const lenis = useLenis()
-
-  const goTo = (id: string) => {
-    const el = document.getElementById(id)
-    if (!el) return
-    if (lenis) lenis.scrollTo(el, { offset: -72 })
-    else el.scrollIntoView({ behavior: 'smooth' })
-  }
 
   return (
     <footer className="bg-neutral-900 text-neutral-300">
@@ -42,14 +35,10 @@ export default function Footer() {
             </h3>
             <ul className="mt-4 space-y-3 text-sm text-neutral-400">
               {EXPLORE.map((l) => (
-                <li key={l.id}>
-                  <button
-                    type="button"
-                    onClick={() => goTo(l.id)}
-                    className="transition-colors hover:text-white"
-                  >
+                <li key={l.to}>
+                  <Link to={l.to} className="transition-colors hover:text-white">
                     {t(l.key)}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
