@@ -38,9 +38,11 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ───────────────────────────────────────────── */}
-      <section id="top" className="relative flex min-h-dvh items-center overflow-hidden">
+      <section id="top" className="relative flex min-h-dvh flex-col overflow-hidden bg-neutral-950 lg:justify-center">
+        {/* Mobile: full-width 16:9 band so the whole frame shows (no side crop).
+            Desktop: absolute full-bleed cover with overlaid text. */}
         <video
-          className="absolute inset-0 h-full w-full object-cover"
+          className="aspect-video w-full shrink-0 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full lg:w-full"
           autoPlay
           muted
           loop
@@ -49,10 +51,10 @@ export default function Home() {
         >
           <source src="/videos/agt-cover-v4.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/25" />
+        <div className="absolute inset-0 hidden bg-gradient-to-r from-black/85 via-black/55 to-black/30 lg:block" />
+        <div className="absolute inset-0 hidden bg-gradient-to-t from-black/60 via-transparent to-black/25 lg:block" />
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-6 py-10 lg:flex-none lg:px-10 lg:py-32">
           <motion.div
             initial="hidden"
             animate="show"
@@ -62,14 +64,14 @@ export default function Home() {
             <motion.h1
               variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: EASE }}
-              className="font-hero text-[1.75rem] leading-[1.15] sm:text-5xl lg:text-6xl"
+              className="font-hero text-2xl leading-[1.15] sm:text-5xl lg:text-6xl"
             >
               {t('hero.title')}
             </motion.h1>
             <motion.p
               variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: EASE }}
-              className="mt-6 max-w-xl text-base leading-relaxed text-cream-100/85 sm:mt-7 sm:text-lg"
+              className="mt-4 max-w-xl text-[15px] leading-relaxed text-cream-100/80 sm:mt-7 sm:text-lg"
             >
               {t('hero.subtitle')}
             </motion.p>
@@ -80,9 +82,9 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.1, duration: 1 }}
-          className="absolute inset-x-0 bottom-8 z-10 flex justify-center"
+          className="absolute inset-x-0 bottom-6 z-10 flex justify-center lg:bottom-8"
         >
-          <span className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/70">
+          <span className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-white/70 sm:text-xs">
             <ArrowDown className="size-4 animate-bounce" />
             {t('hero.scroll')}
           </span>
