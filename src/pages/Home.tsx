@@ -52,7 +52,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/25" />
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-32 lg:px-10">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
           <motion.div
             initial="hidden"
             animate="show"
@@ -69,7 +69,7 @@ export default function Home() {
             <motion.p
               variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: EASE }}
-              className="mt-7 max-w-xl text-lg leading-relaxed text-cream-100/85"
+              className="mt-6 max-w-xl text-base leading-relaxed text-cream-100/85 sm:mt-7 sm:text-lg"
             >
               {t('hero.subtitle')}
             </motion.p>
@@ -90,7 +90,7 @@ export default function Home() {
       </section>
 
       {/* ── Intro ──────────────────────────────────────────── */}
-      <section id="about" className="bg-cream-50 py-24 lg:py-32">
+      <section id="about" className="bg-cream-50 py-16 sm:py-20 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal className="mx-auto max-w-3xl text-center">
             <h2 className="font-display text-3xl font-medium leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl">
@@ -101,16 +101,16 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <div className="mt-16 grid gap-6 sm:grid-cols-3 lg:mt-20">
+          <div className="mt-10 grid gap-5 sm:mt-16 sm:grid-cols-3 sm:gap-6 lg:mt-20">
             {introPillars.map((pillar, i) => {
               const Icon = PILLAR_ICONS[i] ?? Factory
               return (
                 <Reveal key={pillar.title} delay={i * 0.1}>
-                  <div className="group flex h-full flex-col items-center rounded-3xl border border-cream-200 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-clay-200 hover:shadow-xl hover:shadow-ink/[0.06]">
-                    <span className="flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-clay-400 to-clay-600 text-white shadow-lg shadow-clay-500/25">
-                      <Icon className="size-7" strokeWidth={1.7} />
+                  <div className="group flex h-full flex-col items-center rounded-3xl border border-cream-200 bg-white p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-clay-200 hover:shadow-xl hover:shadow-ink/[0.06] sm:p-8">
+                    <span className="flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-clay-400 to-clay-600 text-white shadow-lg shadow-clay-500/25 sm:size-16">
+                      <Icon className="size-6 sm:size-7" strokeWidth={1.7} />
                     </span>
-                    <h3 className="mt-6 text-lg font-semibold text-ink">{pillar.title}</h3>
+                    <h3 className="mt-5 text-lg font-semibold text-ink sm:mt-6">{pillar.title}</h3>
                     <p className="mx-auto mt-2.5 max-w-xs text-sm leading-relaxed text-ink/55">
                       {pillar.desc}
                     </p>
@@ -123,7 +123,7 @@ export default function Home() {
       </section>
 
       {/* ── Capabilities ───────────────────────────────────── */}
-      <section id="capabilities" className="relative overflow-hidden py-24 text-white lg:py-32">
+      <section id="capabilities" className="relative overflow-hidden py-16 text-white sm:py-20 lg:py-32">
         <img
           src="/backgrounds/end-to-end.jpg"
           alt=""
@@ -143,7 +143,7 @@ export default function Home() {
                 </p>
                 <Link
                   to="/what-we-do"
-                  className="mt-10 inline-flex items-center rounded-full bg-white px-8 py-3.5 font-medium text-ink shadow-lg shadow-black/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-clay-500 hover:text-white hover:shadow-xl hover:shadow-clay-500/30"
+                  className="mt-8 inline-flex items-center whitespace-nowrap rounded-full bg-white px-8 py-3.5 font-medium text-ink shadow-lg shadow-black/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-clay-500 hover:text-white hover:shadow-xl hover:shadow-clay-500/30 sm:mt-10"
                 >
                   {t('capabilities.cta')}
                 </Link>
@@ -153,12 +153,12 @@ export default function Home() {
             <div className="lg:col-span-3">
               {capabilities.map((item, i) => (
                 <Reveal key={item.title} delay={i * 0.06}>
-                  <div className="group cursor-default py-5 sm:py-6">
-                    <h3 className="font-display text-xl font-medium text-white transition-all duration-300 group-hover:-translate-y-1 group-hover:text-clay-400 sm:text-2xl">
+                  <div className="group cursor-default py-4 sm:py-6">
+                    <h3 className="font-display text-xl font-medium text-white transition-all duration-300 sm:text-2xl lg:group-hover:-translate-y-1 lg:group-hover:text-clay-400">
                       {item.title}
                     </h3>
-                    <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-hover:grid-rows-[1fr]">
-                      <p className="max-w-lg overflow-hidden text-sm leading-relaxed text-white/55 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <div className="grid grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-out lg:grid-rows-[0fr] lg:group-hover:grid-rows-[1fr]">
+                      <p className="mt-1.5 max-w-lg overflow-hidden text-sm leading-relaxed text-white/60 lg:mt-0 lg:opacity-0 lg:transition-opacity lg:duration-300 lg:group-hover:opacity-100">
                         {item.desc}
                       </p>
                     </div>
@@ -171,7 +171,7 @@ export default function Home() {
       </section>
 
       {/* ── Products ───────────────────────────────────────── */}
-      <section id="products" className="bg-cream-50 py-24 lg:py-32">
+      <section id="products" className="bg-cream-50 py-16 sm:py-20 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal className="max-w-2xl">
             <h2 className="font-display text-3xl font-medium leading-tight tracking-tight text-ink sm:text-4xl">
@@ -182,7 +182,7 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-4 sm:mt-14 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
             {categories.map((cat, i) => (
               <Reveal key={cat} delay={(i % 4) * 0.08}>
                 <Link
@@ -208,7 +208,7 @@ export default function Home() {
       </section>
 
       {/* ── Services ───────────────────────────────────────── */}
-      <section id="services" className="bg-cream-100 py-24 lg:py-32">
+      <section id="services" className="bg-cream-100 py-16 sm:py-20 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal className="max-w-2xl">
             <h2 className="font-display text-3xl font-medium leading-tight tracking-tight text-ink sm:text-4xl">
@@ -216,7 +216,7 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          <div className="mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-x-8 gap-y-7 sm:mt-14 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
             {services.map((service, i) => (
               <Reveal key={service.title} delay={(i % 4) * 0.08}>
                 <div className="relative h-full border-t border-clay-200 pt-6">
@@ -235,7 +235,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA / Contact ──────────────────────────────────── */}
-      <section id="contact" className="bg-cream-50 py-24 lg:py-32">
+      <section id="contact" className="bg-cream-50 py-16 sm:py-20 lg:py-32">
         <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
           <Reveal>
             <h2 className="font-display text-3xl font-medium leading-tight tracking-tight text-ink sm:text-4xl lg:text-5xl">

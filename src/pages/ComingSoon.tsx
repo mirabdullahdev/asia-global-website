@@ -16,7 +16,7 @@ export default function ComingSoon({
   const label = title ?? (titleKey ? t(titleKey) : '')
 
   return (
-    <section className="flex min-h-dvh flex-col items-center justify-center bg-cream-50 px-6 py-40 text-center">
+    <section className="flex min-h-dvh flex-col items-center justify-center bg-cream-50 px-6 py-32 text-center">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
