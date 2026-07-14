@@ -45,9 +45,9 @@ export default function Home() {
           muted
           loop
           playsInline
-          poster="/videos/agt-cover-poster-v3.jpg"
+          poster="/videos/agt-cover-poster-v4.jpg"
         >
-          <source src="/videos/agt-cover-v3.mp4" type="video/mp4" />
+          <source src="/videos/agt-cover-v4.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/25" />
@@ -62,7 +62,7 @@ export default function Home() {
             <motion.h1
               variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: EASE }}
-              className="font-hero text-4xl leading-[1.12] sm:text-5xl lg:text-6xl"
+              className="font-hero text-[1.75rem] leading-[1.15] sm:text-5xl lg:text-6xl"
             >
               {t('hero.title')}
             </motion.h1>
