@@ -47,9 +47,9 @@ export default function Home() {
           muted
           loop
           playsInline
-          poster="/videos/agt-cover-poster-v4.jpg"
+          poster="/videos/agt-cover-poster-v5.jpg"
         >
-          <source src="/videos/agt-cover-v4.mp4" type="video/mp4" />
+          <source src="/videos/agt-cover-v5.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 hidden bg-gradient-to-r from-black/85 via-black/55 to-black/30 lg:block" />
         <div className="absolute inset-0 hidden bg-gradient-to-t from-black/60 via-transparent to-black/25 lg:block" />
