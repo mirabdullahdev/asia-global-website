@@ -12,7 +12,7 @@
   },
   "comingSoon": {
     "title": "Coming Soon",
-    "body": "This page is on its way — we're putting it together. Please check back soon.",
+    "body": "This page is on its way. We're putting it together, so please check back soon.",
     "back": "Back to home"
   },
   "hero": {
@@ -22,7 +22,7 @@
   },
   "intro": {
     "title": "A sourcing partner, not just another supplier",
-    "body": "We connect importers and fashion brands with the right apparel and denim factories in Pakistan — and manage the details, from sampling to shipment, so every order arrives dependable, on time, and at a fair price.",
+    "body": "We connect importers and fashion brands with the right apparel and denim factories in Pakistan, and manage the details, from sampling to shipment, so every order arrives dependable, on time, and at a fair price.",
     "pillars": [
       {
         "title": "Direct factory access",
@@ -45,7 +45,7 @@
     "items": [
       {
         "title": "Single-Window Sourcing",
-        "desc": "One office coordinating the right Pakistani vendors — you deal with us, not a dozen factories."
+        "desc": "One office coordinating the right Pakistani vendors, so you deal with us, not a dozen factories."
       },
       {
         "title": "Vendor Network Access",
@@ -61,7 +61,7 @@
       },
       {
         "title": "Clear Communication",
-        "desc": "Timely, transparent updates at every step — the difference our buyers rely on."
+        "desc": "Timely, transparent updates at every step. It's the difference our buyers rely on."
       },
       {
         "title": "Logistics & Export",
@@ -71,7 +71,7 @@
   },
   "products": {
     "title": "Apparel & denim we source",
-    "subtitle": "A focused portfolio for importers and fashion brands — from knits and wovens to full denim programs.",
+    "subtitle": "A focused portfolio for importers and fashion brands, from knits and wovens to full denim programs.",
     "categories": [
       "Denim",
       "Knitwear",

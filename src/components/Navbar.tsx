@@ -53,7 +53,7 @@ export default function Navbar() {
         } ${textColor}`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-          <Link to="/" aria-label="Asia Global Textiles — home" className="flex items-center">
+          <Link to="/" aria-label="Asia Global Textiles home" className="flex items-center">
             <img
               src={solid ? '/brand/asia-logo.png' : '/brand/asia-logo-light.png'}
               alt="Asia Global Textiles"

@@ -87,7 +87,7 @@ export default function Home() {
             <motion.p
               variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: EASE }}
-              className="mt-4 hidden max-w-xl text-[15px] leading-relaxed text-cream-100/80 lg:mt-7 lg:block lg:text-lg"
+              className="mt-4 max-w-xl text-[15px] leading-relaxed text-cream-100/85 drop-shadow-md lg:mt-7 lg:text-lg lg:drop-shadow-none"
             >
               {t('hero.subtitle')}
             </motion.p>
@@ -110,11 +110,11 @@ export default function Home() {
       {/* ── Intro ──────────────────────────────────────────── */}
       <section id="about" className="bg-cream-50 py-16 sm:py-20 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <Reveal className="mx-auto max-w-3xl text-center">
+          <Reveal className="max-w-3xl">
             <h2 className="font-display text-3xl font-medium leading-[1.1] tracking-tight text-ink sm:text-4xl lg:text-5xl">
               {t('intro.title')}
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink/60">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/60">
               {t('intro.body')}
             </p>
           </Reveal>
@@ -124,12 +124,12 @@ export default function Home() {
               const Icon = PILLAR_ICONS[i] ?? Factory
               return (
                 <Reveal key={pillar.title} delay={i * 0.1}>
-                  <div className="group flex h-full flex-col items-center rounded-3xl border border-cream-200 bg-white p-7 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-clay-200 hover:shadow-xl hover:shadow-ink/[0.06] sm:p-8">
+                  <div className="group flex h-full flex-col rounded-3xl border border-cream-200 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-clay-200 hover:shadow-xl hover:shadow-ink/[0.06] sm:p-8">
                     <span className="flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-clay-400 to-clay-600 text-white shadow-lg shadow-clay-500/25 sm:size-16">
                       <Icon className="size-6 sm:size-7" strokeWidth={1.7} />
                     </span>
                     <h3 className="mt-5 text-lg font-semibold text-ink sm:mt-6">{pillar.title}</h3>
-                    <p className="mx-auto mt-2.5 max-w-xs text-sm leading-relaxed text-ink/55">
+                    <p className="mt-2.5 max-w-xs text-sm leading-relaxed text-ink/55">
                       {pillar.desc}
                     </p>
                   </div>
@@ -254,12 +254,12 @@ export default function Home() {
 
       {/* ── CTA / Contact ──────────────────────────────────── */}
       <section id="contact" className="bg-cream-50 py-16 sm:py-20 lg:py-32">
-        <div className="mx-auto max-w-4xl px-6 text-center lg:px-10">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal>
-            <h2 className="font-display text-3xl font-medium leading-tight tracking-tight text-ink sm:text-4xl lg:text-5xl">
+            <h2 className="max-w-3xl font-display text-3xl font-medium leading-tight tracking-tight text-ink sm:text-4xl lg:text-5xl">
               {t('cta.title')}
             </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink/65">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/65">
               {t('cta.body')}
             </p>
             <a
