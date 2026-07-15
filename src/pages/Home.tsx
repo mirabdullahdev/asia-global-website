@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import Reveal from '@/components/Reveal'
 import { EASE } from '@/lib/motion'
+import { useIsDesktop } from '@/lib/useIsDesktop'
 
 const PILLAR_ICONS: LucideIcon[] = [Factory, Handshake, MessagesSquare]
 
@@ -29,6 +30,7 @@ type TitleDesc = { title: string; desc: string }
 
 export default function Home() {
   const { t } = useTranslation()
+  const isDesktop = useIsDesktop()
 
   const capabilities = t('capabilities.items', { returnObjects: true }) as TitleDesc[]
   const categories = t('products.categories', { returnObjects: true }) as string[]
@@ -38,23 +40,37 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ───────────────────────────────────────────── */}
-      <section id="top" className="relative flex min-h-dvh flex-col overflow-hidden bg-neutral-950 lg:justify-center">
-        {/* Mobile: full-width 16:9 band so the whole frame shows (no side crop).
-            Desktop: absolute full-bleed cover with overlaid text. */}
+      <section
+        id="top"
+        className="relative flex min-h-dvh items-end overflow-hidden bg-neutral-950 lg:items-center"
+      >
+        {/* Only one source is rendered (see useIsDesktop) so the browser downloads
+            just the portrait file on phones or the landscape file on desktop. */}
         <video
-          className="aspect-video w-full shrink-0 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full lg:w-full"
+          key={isDesktop ? 'desktop' : 'mobile'}
+          className="absolute inset-0 h-full w-full object-cover"
           autoPlay
           muted
           loop
           playsInline
-          poster="/videos/agt-cover-poster-v5.jpg"
+          poster={
+            isDesktop
+              ? '/videos/agt-hero-desktop-poster.jpg'
+              : '/videos/agt-hero-mobile-poster.jpg'
+          }
         >
-          <source src="/videos/agt-cover-v5.mp4" type="video/mp4" />
+          <source
+            src={isDesktop ? '/videos/agt-hero-desktop.mp4' : '/videos/agt-hero-mobile.mp4'}
+            type="video/mp4"
+          />
         </video>
+
+        {/* Mobile scrim: bottom-weighted for the overlaid heading, light at top for the navbar. */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/45 lg:hidden" />
         <div className="absolute inset-0 hidden bg-gradient-to-r from-black/85 via-black/55 to-black/30 lg:block" />
         <div className="absolute inset-0 hidden bg-gradient-to-t from-black/60 via-transparent to-black/25 lg:block" />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-center px-6 py-10 lg:flex-none lg:px-10 lg:py-32">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-24 pt-32 lg:px-10 lg:py-32">
           <motion.div
             initial="hidden"
             animate="show"
@@ -64,14 +80,14 @@ export default function Home() {
             <motion.h1
               variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: EASE }}
-              className="font-hero text-2xl leading-[1.15] sm:text-5xl lg:text-6xl"
+              className="font-hero text-2xl leading-[1.15] drop-shadow-lg sm:text-4xl lg:text-6xl lg:drop-shadow-none"
             >
               {t('hero.title')}
             </motion.h1>
             <motion.p
               variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.8, ease: EASE }}
-              className="mt-4 max-w-xl text-[15px] leading-relaxed text-cream-100/80 sm:mt-7 sm:text-lg"
+              className="mt-4 hidden max-w-xl text-[15px] leading-relaxed text-cream-100/80 lg:mt-7 lg:block lg:text-lg"
             >
               {t('hero.subtitle')}
             </motion.p>
