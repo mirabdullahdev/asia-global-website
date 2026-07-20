@@ -79,6 +79,15 @@
       "Ropa exterior"
     ]
   },
+  "productsPage": {
+    "title": "Productos",
+    "intro": "La confección y el denim que abastecemos y desarrollamos para importadores y marcas de moda. Eche un vistazo y contáctenos con cualquier idea que tenga, trabajaremos para desarrollarla.",
+    "rangeTitle": "Nuestra gama de productos",
+    "rangeSubtitle": "Explore las categorías en las que nos especializamos: tejidos de punto, planos y denim.",
+    "viewRange": "Ver gama",
+    "note": "Asia Global Textiles es un socio de abastecimiento, no una tienda minorista. Los productos se muestran para dar una idea de nuestra gama; todo se desarrolla según su especificación.",
+    "cta": "Consultar por un producto"
+  },
   "services": {
     "title": "Servicios",
     "items": [

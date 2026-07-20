@@ -79,6 +79,15 @@
       "Outerwear"
     ]
   },
+  "productsPage": {
+    "title": "Products",
+    "intro": "The apparel and denim we source and develop for importers and fashion brands. Have a look, and get in touch for anything you have in mind, we will work hard to develop it.",
+    "rangeTitle": "Our product range",
+    "rangeSubtitle": "Explore the categories we specialise in across knits, wovens, and denim.",
+    "viewRange": "View range",
+    "note": "Asia Global Textiles is a sourcing partner, not a retail store. Products are shown to give you a sense of our range, everything is developed to your specification.",
+    "cta": "Enquire about a product"
+  },
   "services": {
     "title": "Services",
     "items": [

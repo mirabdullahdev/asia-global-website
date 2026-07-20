@@ -12,6 +12,7 @@ import { useLenis } from 'lenis/react'
 import SmoothScroll from '@/components/SmoothScroll'
 import Layout from '@/components/Layout'
 import Home from '@/pages/Home'
+import Products from '@/pages/Products'
 import ComingSoon from '@/pages/ComingSoon'
 
 /** Reset scroll to the top on every route change. */
@@ -50,7 +51,7 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="about" element={<ComingSoon titleKey="nav.about" />} />
             <Route path="what-we-do" element={<ComingSoon titleKey="nav.whatWeDo" />} />
-            <Route path="products" element={<ComingSoon titleKey="nav.products" />} />
+            <Route path="products" element={<Products />} />
             <Route path="products/:category" element={<ProductCategory />} />
             <Route path="contact" element={<ComingSoon titleKey="nav.contact" />} />
             <Route path="*" element={<Navigate to="/" replace />} />
