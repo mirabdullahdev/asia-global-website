@@ -5,14 +5,13 @@ import {
   Route,
   Navigate,
   useLocation,
-  useParams,
 } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import { useLenis } from 'lenis/react'
 import SmoothScroll from '@/components/SmoothScroll'
 import Layout from '@/components/Layout'
 import Home from '@/pages/Home'
 import Products from '@/pages/Products'
+import ProductCategory from '@/pages/ProductCategory'
 import ComingSoon from '@/pages/ComingSoon'
 
 /** Reset scroll to the top on every route change. */
@@ -26,19 +25,6 @@ function ScrollToTop() {
   }, [pathname, lenis])
 
   return null
-}
-
-// Keep in sync with CATEGORY_SLUGS in Home.tsx (order matches products.categories).
-const CATEGORY_SLUGS = ['denim', 'knitwear', 'chinos', 'outerwear']
-
-/** Coming Soon placeholder titled with the localized product-category name. */
-function ProductCategory() {
-  const { category } = useParams()
-  const { t } = useTranslation()
-  const index = CATEGORY_SLUGS.indexOf(category ?? '')
-  if (index === -1) return <Navigate to="/products" replace />
-  const names = t('products.categories', { returnObjects: true }) as string[]
-  return <ComingSoon title={names[index]} />
 }
 
 export default function App() {

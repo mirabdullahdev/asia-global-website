@@ -1,27 +1,17 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
 import Reveal from '@/components/Reveal'
+import ProductGallery from '@/components/ProductGallery'
 import { EASE } from '@/lib/motion'
-
-// Order-matched to `products.categories`; slugs stay language-agnostic.
-const CATEGORY_IMAGES = [
-  '/categories/denim.jpg',
-  '/categories/knitwear.jpg',
-  '/categories/chinos.jpg',
-  '/categories/outerwear.jpg',
-]
-const CATEGORY_SLUGS = ['denim', 'knitwear', 'chinos', 'outerwear']
 
 export default function Products() {
   const { t } = useTranslation()
-  const categories = t('products.categories', { returnObjects: true }) as string[]
 
   return (
     <>
       {/* ── Cover ──────────────────────────────────────────── */}
-      <section className="relative flex h-[62vh] min-h-[420px] items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-dvh items-center justify-center overflow-hidden">
         <img
           src="/backgrounds/product-cover.jpg"
           alt=""
@@ -43,53 +33,26 @@ export default function Products() {
         </motion.div>
       </section>
 
-      {/* ── Category grid ──────────────────────────────────── */}
+      {/* ── All products ───────────────────────────────────── */}
       <section className="bg-cream-50 py-16 sm:py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal className="max-w-3xl">
             <h2 className="font-display text-3xl font-medium leading-tight tracking-tight text-ink sm:text-4xl">
-              {t('productsPage.rangeTitle')}
+              {t('productsPage.rangeTitleLead')}
+              <span className="text-clay-500">{t('productsPage.rangeTitleAccent')}</span>
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-ink/60">
               {t('productsPage.rangeSubtitle')}
             </p>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-2 lg:gap-6">
-            {categories.map((cat, i) => (
-              <Reveal key={cat} delay={(i % 2) * 0.08}>
-                <Link
-                  to={`/products/${CATEGORY_SLUGS[i]}`}
-                  className="group relative flex aspect-[4/3] items-end overflow-hidden rounded-3xl bg-clay-900"
-                >
-                  <img
-                    src={CATEGORY_IMAGES[i]}
-                    alt={cat}
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent transition-colors duration-300 group-hover:from-black/80" />
-                  <div className="relative z-10 flex w-full items-center justify-between p-6 sm:p-8">
-                    <div>
-                      <h3 className="font-display text-2xl font-medium text-white drop-shadow sm:text-3xl">
-                        {cat}
-                      </h3>
-                      <span className="mt-1 inline-block text-sm text-white/70">
-                        {t('productsPage.viewRange')}
-                      </span>
-                    </div>
-                    <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-white/15 text-white backdrop-blur transition-all duration-300 group-hover:bg-clay-500">
-                      <ArrowUpRight className="size-5 transition-transform duration-300 group-hover:rotate-45" />
-                    </span>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
+          <div className="mt-10">
+            <ProductGallery active={null} />
           </div>
 
           {/* Not-a-retailer note + CTA */}
           <Reveal delay={0.1}>
-            <div className="mt-14 flex flex-col items-start gap-6 rounded-3xl border border-cream-200 bg-white p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
+            <div className="mt-16 flex flex-col items-start gap-6 border border-cream-200 bg-white p-8 sm:flex-row sm:items-center sm:justify-between sm:p-10">
               <p className="max-w-2xl text-lg leading-relaxed text-ink/70">
                 {t('productsPage.note')}
               </p>

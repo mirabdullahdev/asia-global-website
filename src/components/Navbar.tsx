@@ -19,7 +19,9 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
-  const isHome = pathname === '/'
+  // Pages with a full-screen dark hero at the top, where the navbar sits
+  // transparent (white text/light logo) until the user scrolls.
+  const hasHero = pathname === '/' || pathname === '/products'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -39,8 +41,8 @@ export default function Navbar() {
   // Close the mobile menu whenever the route changes.
   useEffect(() => setOpen(false), [pathname])
 
-  // Transparent over the hero only on the landing page; solid everywhere else.
-  const solid = scrolled || !isHome
+  // Transparent over the hero on pages that have one; solid everywhere else.
+  const solid = scrolled || !hasHero
   const textColor = solid ? 'text-ink' : 'text-white'
 
   return (
