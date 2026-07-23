@@ -31,6 +31,7 @@ export const PRODUCTS: Product[] = [
   { id: 'denim-001', category: 'denim', image: '/products/denim-001.jpg' },
   { id: 'denim-002', category: 'denim', image: '/products/denim-002.jpg' },
   { id: 'knit-001', category: 'knitwear', image: '/products/knit-001.jpg' },
+  { id: 'knit-002', category: 'knitwear', image: '/products/knit-002.jpg' },
 ]
 
 export function productsByCategory(slug: CategorySlug) {
