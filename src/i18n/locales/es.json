@@ -111,6 +111,24 @@
     "body": "Cuéntenos qué está abasteciendo y le mostraremos lo confiable que puede ser el abastecimiento textil desde Pakistán.",
     "button": "Sea nuestro socio"
   },
+  "contactPage": {
+    "title": "Contáctenos",
+    "subtitle": "Cuéntenos qué está abasteciendo, desde un solo estilo hasta un programa completo, y nuestro equipo le responderá en breve.",
+    "emailLabel": "Escríbanos",
+    "locationLabel": "Ubicados en",
+    "name": "Nombre",
+    "namePlaceholder": "Su nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "usted@empresa.com",
+    "message": "Su mensaje",
+    "messagePlaceholder": "Cuéntenos sobre el producto, las cantidades y los plazos que tiene en mente.",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "successTitle": "Mensaje enviado",
+    "success": "Gracias por escribirnos. Le contactaremos en breve.",
+    "sendAnother": "Enviar otro mensaje",
+    "error": "Algo salió mal. Inténtelo de nuevo o escríbanos directamente."
+  },
   "footer": {
     "tagline": "Su ventana única a la confección y el denim de Pakistán.",
     "explore": "Explorar",

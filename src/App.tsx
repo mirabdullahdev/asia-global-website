@@ -12,6 +12,7 @@ import Layout from '@/components/Layout'
 import Home from '@/pages/Home'
 import Products from '@/pages/Products'
 import ProductCategory from '@/pages/ProductCategory'
+import Contact from '@/pages/Contact'
 import ComingSoon from '@/pages/ComingSoon'
 
 /** Reset scroll to the top on every route change. */
@@ -39,7 +40,7 @@ export default function App() {
             <Route path="what-we-do" element={<ComingSoon titleKey="nav.whatWeDo" />} />
             <Route path="products" element={<Products />} />
             <Route path="products/:category" element={<ProductCategory />} />
-            <Route path="contact" element={<ComingSoon titleKey="nav.contact" />} />
+            <Route path="contact" element={<Contact />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
