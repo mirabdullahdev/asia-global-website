@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { Mail, MapPin, Send, CheckCircle2 } from 'lucide-react'
+import { Mail, MapPin, CheckCircle2 } from 'lucide-react'
 import { EASE } from '@/lib/motion'
 
 const FORM_ENDPOINT = 'https://formsubmit.co/ajax/mir@asiaglobaltex.com'
@@ -45,7 +45,7 @@ export default function Contact() {
   }
 
   const fieldClass =
-    'w-full rounded-xl border border-cream-200 bg-white px-4 py-3 text-ink outline-none transition-colors placeholder:text-ink/35 focus:border-clay-500'
+    'w-full rounded-xl border border-cream-200 bg-cream-50/60 px-4 py-3.5 text-ink outline-none transition-all placeholder:text-ink/35 hover:border-cream-200 hover:bg-white focus:border-clay-500 focus:bg-white focus:ring-4 focus:ring-clay-500/10'
 
   return (
     <section className="min-h-dvh bg-cream-50 pb-16 pt-28 sm:pb-20 lg:pb-28 lg:pt-36">
@@ -100,8 +100,14 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
-            className="rounded-3xl border border-cream-200 bg-white p-6 shadow-sm sm:p-10"
+            className="relative"
           >
+            {/* soft glow */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -inset-3 -z-10 rounded-[2.25rem] bg-gradient-to-br from-clay-500/25 via-clay-400/10 to-transparent opacity-80 blur-2xl"
+            />
+            <div className="rounded-3xl border border-white bg-white p-6 shadow-[0_28px_70px_-24px_rgba(0,57,166,0.32)] ring-1 ring-cream-200/70 sm:p-10">
             {status === 'success' ? (
               <div className="flex h-full flex-col items-start justify-center py-8">
                 <CheckCircle2 className="size-12 text-clay-500" />
@@ -170,19 +176,13 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'sending'}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-clay-500 px-8 py-3.5 font-medium text-white transition-colors hover:bg-clay-600 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                  className="w-full rounded-full bg-clay-500 px-8 py-4 font-medium text-white shadow-lg shadow-clay-500/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-clay-600 hover:shadow-xl hover:shadow-clay-500/35 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 sm:w-auto sm:px-10"
                 >
-                  {status === 'sending' ? (
-                    t('contactPage.sending')
-                  ) : (
-                    <>
-                      {t('contactPage.send')}
-                      <Send className="size-4" />
-                    </>
-                  )}
+                  {status === 'sending' ? t('contactPage.sending') : t('contactPage.send')}
                 </button>
               </form>
             )}
+            </div>
           </motion.div>
         </div>
       </div>
