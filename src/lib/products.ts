@@ -28,10 +28,16 @@ export type Product = {
 }
 
 export const PRODUCTS: Product[] = [
-  { id: 'denim-001', category: 'denim', image: '/products/denim-001.jpg' },
-  { id: 'denim-002', category: 'denim', image: '/products/denim-002.jpg' },
-  { id: 'knit-001', category: 'knitwear', image: '/products/knit-001.jpg' },
-  { id: 'knit-002', category: 'knitwear', image: '/products/knit-002.jpg' },
+  { id: 'denim-1', category: 'denim', image: '/products/denim-1.jpg' },
+  { id: 'denim-3', category: 'denim', image: '/products/denim-3.jpg' },
+  { id: 'knit-1', category: 'knitwear', image: '/products/knit-1.jpg' },
+  { id: 'knit-2', category: 'knitwear', image: '/products/knit-2.jpg' },
+  { id: 'knit-3', category: 'knitwear', image: '/products/knit-3.jpg' },
+  { id: 'knit-4', category: 'knitwear', image: '/products/knit-4.jpg' },
+  { id: 'knit-5', category: 'knitwear', image: '/products/knit-5.jpg' },
+  { id: 'knit-6', category: 'knitwear', image: '/products/knit-6.jpg' },
+  { id: 'knit-7', category: 'knitwear', image: '/products/knit-7.jpg' },
+  { id: 'knit-8', category: 'knitwear', image: '/products/knit-8.jpg' },
 ]
 
 export function productsByCategory(slug: CategorySlug) {

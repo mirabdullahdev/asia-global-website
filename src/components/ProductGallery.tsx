@@ -71,7 +71,7 @@ export default function ProductGallery({ active }: { active: CategorySlug | null
                 <button
                   type="button"
                   onClick={() => setOpenIndex(i)}
-                  className="relative block aspect-[4/5] w-full overflow-hidden border border-cream-200 bg-white"
+                  className="relative block aspect-square w-full overflow-hidden border border-cream-200 bg-white"
                 >
                   <img
                     src={p.image}
