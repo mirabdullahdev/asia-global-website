@@ -17,7 +17,7 @@ export default function Contact() {
     e.preventDefault()
     const form = e.currentTarget
     const fd = new FormData(form)
-    // Honeypot — bots fill this; humans never see it.
+    // Honeypot — bots fill this; humans nekver see it.
     if (fd.get('_honey')) return
 
     setStatus('sending')
